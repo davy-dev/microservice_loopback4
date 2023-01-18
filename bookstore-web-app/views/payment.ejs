@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  
+
+<head>
+        <name>Payment Inventory</name>
+        
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+      
+</head>
+  
+
+<body>
+        <h1>Payment Inventory</h1>
+        <ul>
+                <% for(let payment of payments) { %>
+                        <li>
+                <%= payment.author %> - <%= payment.amount %>
+                        </ li>
+                                <% } %>
+                                </ul>
+        <h2>Add Payment:</h2>
+        <form action="/payment/add" method="POST">
+                <label for="name">Nom</label>
+                <input type="text" name="name" />
+                <label for="author">Author</label>
+                <input type="text" name="author" />
+        <label for="amount">Amount</label>
+                <input type="text" name="amount" />
+                <button type="submit" value="Submit">Submit</button>
+            
+    </form>
+      </body>
+
+</html>

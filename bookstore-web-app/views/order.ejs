@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  
+
+<head>
+        <title>Order Inventory</title>
+        
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+      
+</head>
+  
+
+<body>
+        <h1>Order Inventory</h1>
+        <ul>
+                <% for(let order of orders) { %>
+                        <li>
+                <%= order.name %> - <%= order.amount %>
+                        </ li>
+                                <% } %>
+                                </ul>
+        <h2>Add order:</h2>
+        <form action="/order/add" method="POST">
+                <label for="name">Name</label>
+                <input type="text" name="name" />
+                <label for="amount">Amount</label>
+                <input type="text" name="amount" />
+                <button type="submit" value="Submit">Submit</button>
+            </form>
+      </body>
+
+</html>
